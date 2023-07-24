@@ -1,2 +1,2 @@
 # vet_clinics_db
-A database for exploring equitable access to veterinary (vet) care in Madison, WI
+A database for exploring equitable access to veterinary (vet) care in Madison, WI, explores the limitations for people when accessing vet care using census tract level data: demographics, socio-economic variables including public transit information. Therefore, the database serves the queries for potential low accessibility areas ( census tracts) within census tracts and allows for a food desert alike analysis.
