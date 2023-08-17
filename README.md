@@ -6,7 +6,7 @@ The projection of data is UTM Zone 16N
 <ul>
     <li><code>Urban Boundary of Madison</code>: Shapefile</li>
     <li><code>Madison area Census Tracts</code>: Shapefile</li>
-    <li><code>database_files/Madison_CT_Demographics</code>: CSV</li>
+    <li><code>Madison_CT_Demographics</code>: CSV</li>
     <li><code>Dane_Roads_ROW_2020</code>: Shapefile</li>
 </ul>
 
