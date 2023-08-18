@@ -1,0 +1,21 @@
+-- shp2pgsql which converts ESRI shape files into PostGIS specific SQL statements.
+-- Preparing shapefile to load into "vet" database
+
+STEP1: To create an SQL file from existing shapefile
+Common syntax :
+    shp2pgsql -s (spatial reference) [EPSG_code] path_to_shapefile table_name > sql_file_name
+
+shp2pgsql -s 32616 Madison_Urban_Area_Boundary Madison_Urban_Area_Boundary > Madison_Urban_Area_Boundary.sql
+shp2pgsql -s 32616 Madison_CensusTL_Tracts_2022 Madison_census_tracts > Madison_census_tracts.sql
+
+
+STEP2: Load shapefiles into database
+Common syntax: 
+    psql -d [database_name] -U (user) postgres -f (file) filename.sql
+
+psql -d vet -U postgres -f Madison_Urban_Area_Boundary.sql
+psql -d vet -U postgres -f Madison_census_tracts.sql
+
+
+STEP3: Load CSV into database
+psql -U postgres -d vet -c "COPY Madison_CT_Demographics FROM 'Madison_CT_Demographics.csv' WITH CSV HEADER;"
