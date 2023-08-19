@@ -8,7 +8,7 @@ Common syntax :
 shp2pgsql -s 32616 Madison_Urban_Area_Boundary madison_urban_bounds > madison_urban_bounds.sql
 shp2pgsql -s 32616 Madison_CensusTL_Tracts_2022 madison_census_tracts > madison_census_tracts.sql
 shp2pgsql -s 32616 Dane_roads dane_roads > dane_roads.sql
-
+shp2pgsql -s 32616 madison_metro madison_metro > madison_metro.sql
 
 STEP2: Load shapefiles into database
 Common syntax: 
