@@ -14,9 +14,35 @@ STEP2: Load shapefiles into database
 Common syntax: 
     psql -d [database_name] -U (user) postgres -f (file) filename.sql
 
-psql -d vet -U postgres -f Madison_Urban_Area_Boundary.sql
-psql -d vet -U postgres -f Madison_census_tracts.sql
-psql -d vet -U postgres -f Dane_county_roads.sql
+psql -d vet -U postgres -f madison_urban_bounds.sql
+psql -d vet -U postgres -f madison_census_tracts.sql
+psql -d vet -U postgres -f dane_roads.sql
+psql -d vet -U postgres -f madison_metro.sql
 
-STEP3: Load CSV into database
-psql -U postgres -d vet -c "COPY Madison_CT_Demographics FROM 'Madison_CT_Demographics.csv' WITH CSV HEADER;"
+
+STEP3: Create a table to insert CSV data
+
+CREATE TABLE madison_demographics(
+     TRACTCE  int,
+     GEOID    varchar(30),
+     NAMELSAD varchar(30),
+     racewhite1620_est real,
+     raceaa1620_est real,
+     raceasian1620_est real,
+     raceamind1620_est real,
+     raceoth1620_est real,
+     hispanic1620_est real,
+     noncitizens1620_est real,
+     pubtrans1620_est real,
+     walkoth1620_est real,
+     medincacs1620_est int,
+     gini1620_est real,
+     noveh1620_est real
+);
+
+STEP4: Load CSV into madison_demographics table (vet database)
+COPY madison_demographics(TRACTCE, GEOID, NAMELSAD, racewhite1620_est, raceaa1620_est, raceasian1620_est, raceoth1620_est, 
+hispanic1620_est, noncitizens1620_est, pubtrans1620_est, walkoth1620_est, medincacs1620_est, gini1620_est, noveh1620_est)
+FROM 'Madison_CT_Demographics.csv'
+DELIMITER ','
+CSV HEADER;
