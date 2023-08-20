@@ -3,12 +3,42 @@ A database for exploring equitable access to veterinary (vet) care in Madison, W
 
 Hosted spatial data: 
 The projection of data is UTM Zone 16N
-<ul>
-    <li><code>Urban Boundary of Madison</code>: Shapefile</li>
-    <li><code>Madison area Census Tracts</code>: Shapefile</li>
-    <li><code>Madison_CT_Demographics</code>: CSV</li>
-    <li><code>Dane_Roads_ROW_2020</code>: Shapefile</li>
-</ul>
+
+<table>
+    <tr>
+        <th>Table name</th>
+        <th>File type</th>
+        <th>Geometry type</th>
+        <th>Projection</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>dane_roads</td>
+        <td>Shapefile</td>
+        <td>Line</td>
+        <td>UTM Zone 16N</td>
+        <td>Stores Dane county road network</td>
+    </tr>
+    <tr>
+        <td>madison_demographics</td>
+        <td>CSV</td>
+        <td>NA</td>
+        <td>NA</td>
+        <td>Stores Demographic and socio-economic information</td>
+    </tr>
+    <tr>
+        <td>madison_census_tracts</td>
+        <td>Shapefile</td>
+        <td>Polygon</td>
+        <td>UTM Zone 16N</td>
+        <td>Stores latest census tracts information 2022 (Tiger line)</td>
+    </tr>
+    <tr>
+        <td>madison_metro</td>
+        <td>Shapefile</td>
+        <td></td>
+    </tr>
+</table>
 
 
 <h3>Socio-Demographic Indicators</h3>:
