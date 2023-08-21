@@ -5,9 +5,9 @@ STEP1: To create an SQL file from existing shapefile
 Common syntax :
     shp2pgsql -s (spatial reference) [EPSG_code] path_to_shapefile table_name > sql_file_name.sql
 
-shp2pgsql -s 32616 Madison_Urban_Area_Boundary madison_urban_bounds > madison_urban_bounds.sql
-shp2pgsql -s 32616 Madison_CensusTL_Tracts_2022 madison_census_tracts > madison_census_tracts.sql
-shp2pgsql -s 32616 Dane_roads dane_roads > dane_roads.sql
+shp2pgsql -s 32616 madison_urban_bounds madison_urban_bounds > madison_urban_bounds.sql
+shp2pgsql -s 32616 madison_census_tracts madison_census_tracts > madison_census_tracts.sql
+shp2pgsql -s 32616 dane_roads dane_roads > dane_roads.sql
 shp2pgsql -s 32616 madison_metro madison_metro > madison_metro.sql
 shp2pgsql -s 32616 madison_vet madison_vet > madison_vet.sql
 
@@ -43,3 +43,6 @@ CREATE TABLE madison_demographics(
 
 STEP4: Load CSV into madison_demographics table (vet database)
 \copy madison_demographics(TRACTCE, GEOID, NAMELSAD, racewhite1620_est, raceaa1620_est, raceasian1620_est, raceamind1620_est, raceoth1620_est, hispanic1620_est, noncitizens1620_est, pubtrans1620_est, walkoth1620_est, medincacs1620_est, gini1620_est, noveh1620_est) FROM 'C:\Users\Sidrcs\Documents\Github\vet_clinics_db\processed_project_data\Madison_CT_Demographics.csv' DELIMITER ',' CSV HEADER NULL 'NA';
+
+STEP5: Create a backup SQL file in core_database folder
+pg_dump –U postgres vet > vet_db.sql
