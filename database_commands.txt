@@ -44,5 +44,12 @@ CREATE TABLE madison_demographics(
 STEP4: Load CSV into madison_demographics table (vet database)
 \copy madison_demographics(TRACTCE, GEOID, NAMELSAD, racewhite1620_est, raceaa1620_est, raceasian1620_est, raceamind1620_est, raceoth1620_est, hispanic1620_est, noncitizens1620_est, pubtrans1620_est, walkoth1620_est, medincacs1620_est, gini1620_est, noveh1620_est) FROM 'C:\Users\Sidrcs\Documents\Github\vet_clinics_db\processed_project_data\Madison_CT_Demographics.csv' DELIMITER ',' CSV HEADER NULL 'NA';
 
-STEP5: Create a backup SQL file in core_database folder
+STEP5: Create index on geometries
+CREATE INDEX madison_census_tracts_geom_gist ON madison_census_tracts USING GIST (geom);
+CREATE INDEX madison_metro_geom_gist ON madison_metro USING GIST (geom);
+CREATE INDEX madison_vet_geom_gist ON madison_vet USING GIST (geom);
+CREATE INDEX vet_walk_polygons_geom_gist ON vet_walk_polygons USING GIST (geom);
+CREATE INDEX madison_urban_bounds_geom_gist ON madison_urban_bounds USING GIST (geom);
+
+STEP6: Create a backup SQL file in core_database folder
 pg_dump –U postgres vet > vet_db.sql

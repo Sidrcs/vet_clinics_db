@@ -26,9 +26,10 @@ GROUP BY ct.geoid
 ORDER BY COUNT(vet.name) DESC;
 
 -- Find Census tracts with no vet clinics
-SELECT SUM(vet.name) as vet_clinics, ct.geoid
-FROM madison_vet as vet
-JOIN madison_census_tracts as ct
+SELECT COUNT(vet.name) as vet_clinics, ct.geoid
+FROM madison_census_tracts as ct
+LEFT JOIN madison_vet as vet
 ON ST_Intersects(vet.geom, ct.geom)
 GROUP BY ct.geoid
-ORDER BY vet_clinics ASC;
+HAVING COUNT(vet.name) = 0;
+
