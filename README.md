@@ -13,11 +13,11 @@ The projection of data is UTM Zone 16N
         <th>Description</th>
     </tr>
     <tr>
-        <td>dane_roads</td>
+        <td>vet_walk_polygons</td>
         <td>Shapefile</td>
-        <td>Line</td>
+        <td>Polygons</td>
         <td>UTM Zone 16N</td>
-        <td>Stores Dane county road network</td>
+        <td>Stores 0.5, 1 mile walk polygons from veterinary clinics (Network Analysis)</td>
     </tr>
     <tr>
         <td>madison_demographics</td>
@@ -36,7 +36,23 @@ The projection of data is UTM Zone 16N
     <tr>
         <td>madison_metro</td>
         <td>Shapefile</td>
-        <td></td>
+        <td>Point</td>
+        <td>UTM Zone 16N</td>
+        <td>Stores stops information of Madison Metro Bus routes</td>
+    </tr>
+    <tr>
+        <td>madison_vet</td>
+        <td>Shapefile</td>
+        <td>Point</td>
+        <td>UTM Zone 16N</td>
+        <td>Stores information on veterinary clinics (dogs, cats, open days)</td>
+    </tr>
+      <tr>
+        <td>madison_urban_bounds</td>
+        <td>Shapefile</td>
+        <td>Polygon</td>
+        <td>UTM Zone 16N</td>
+        <td>Stores urban bounds of city of Madison, WI</td>
     </tr>
 </table>
 

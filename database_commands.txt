@@ -7,7 +7,7 @@ Common syntax :
 
 shp2pgsql -s 32616 madison_urban_bounds madison_urban_bounds > madison_urban_bounds.sql
 shp2pgsql -s 32616 madison_census_tracts madison_census_tracts > madison_census_tracts.sql
-shp2pgsql -s 32616 dane_roads dane_roads > dane_roads.sql
+shp2pgsql -s 32616 vet_walk_polygons  vet_walk_polygons > vet_walk_polygons.sql
 shp2pgsql -s 32616 madison_metro madison_metro > madison_metro.sql
 shp2pgsql -s 32616 madison_vet madison_vet > madison_vet.sql
 
@@ -17,7 +17,7 @@ Common syntax:
 
 psql -d vet -U postgres -f madison_urban_bounds.sql
 psql -d vet -U postgres -f madison_census_tracts.sql
-psql -d vet -U postgres -f dane_roads.sql
+psql -d vet -U postgres -f vet_walk_polygons.sql
 psql -d vet -U postgres -f madison_metro.sql
 psql -d vet -U postgres -f madison_vet.sql
 
