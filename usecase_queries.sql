@@ -1,9 +1,9 @@
 -- JANE USE-CASE SCENARIO 1
 
--- Find vet clinics with 1700 meters
+-- Find vet clinics with 1609.34 meters
 SELECT vet.name, vet.low_cost, vet.dogs, vet.open_wk, vet.open_wkds, vet.full_srvc
 FROM madison_vet as vet
-WHERE ST_DWithin(geom, ST_GeomFromText('POINT (305582.7152225829 4772189.289749355)',32616), 1700);
+WHERE ST_DWithin(geom, ST_GeomFromText('POINT (305582.7152225829 4772189.289749355)',32616), 1609.34);
 
 -- Find Bus stops within 100 meters
 SELECT metro.stop_name, metro.route

@@ -1,7 +1,7 @@
 # vet_clinics_db
 A database for exploring equitable access to veterinary (vet) care in Madison, WI, explores the limitations for people when accessing vet care using census tract level data: demographics, socio-economic variables including public transit information. Therefore, the database serves the queries for potential low accessibility areas (census tracts) within census tracts and allows for a food desert alike analysis.
 
-<h3>Data Engineering Information :</h3>
+<h3>Data Engineering Information:</h3>
 
 <table>
     <tr>
@@ -71,7 +71,7 @@ A database for exploring equitable access to veterinary (vet) care in Madison, W
 </table>
 
 
-<h3>Attribute information of datasets</h3>:
+<h3>Attribute information of datasets:</h3>
 
 <code>madison_demographics</code> stores socio-demographic indicators which are retrieved from American Community Survey (ACS) 2016-20 describe economic conditions with better dimensions like Gini Index of income inequality, median income and help analyze veternary deserts situation in Madison, WI. The data is sourced from <a href = "https://foodsecurity.wisc.edu/downloaddata">Applied Population Laboratory (APL)</a>
 
