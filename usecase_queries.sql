@@ -25,10 +25,10 @@ ON ST_Intersects(vet.geom, ct.geom)
 GROUP BY ct.geoid
 ORDER BY COUNT(vet.name) DESC;
 
--- Find Census tracts with highest vet clinics
-SELECT COUNT(vet.name) as vet_clinics, ct.geoid
+-- Find Census tracts with no vet clinics
+SELECT SUM(vet.name) as vet_clinics, ct.geoid
 FROM madison_vet as vet
 JOIN madison_census_tracts as ct
 ON ST_Intersects(vet.geom, ct.geom)
 GROUP BY ct.geoid
-ORDER BY COUNT(vet.name) DESC;
+ORDER BY vet_clinics ASC;
