@@ -1,5 +1,5 @@
 # vet_clinics_db
-A database for exploring equitable access to veterinary (vet) care in Madison, WI, explores the limitations for people when accessing vet care using census tract level data: demographics, socio-economic variables including public transit information. Therefore, the database serves the queries for potential low accessibility areas (census tracts) within census tracts and allows for a food desert alike analysis.
+A database for exploring equitable access to veterinary (vet) care in Madison, WI, explores the limitations for people when accessing vet care using census tract level data: demographics, socio-economic variables, including public transit information. Therefore, the database serves the queries for potential low accessibility areas (census tracts) within census tracts and allows for a food desert analysis.
 
 <img src = "https://github.com/Sidrcs/vet_clinics_db/blob/main/vet_network_analysis_map.png?raw=true">
 
@@ -20,7 +20,7 @@ A database for exploring equitable access to veterinary (vet) care in Madison, W
         <td>Polygons</td>
         <td>UTM Zone 16N</td>
         <td>Network Analysis by Sid</td>
-        <td>Stores 0.5, 1 mile walk polygons from veterinary clinics (Network Analysis)</td>
+        <td>Stores 0.5, 1-mile walk polygons from veterinary clinics (Network Analysis)</td>
     </tr>
     <tr>
         <td>madison_demographics</td>
@@ -60,7 +60,7 @@ A database for exploring equitable access to veterinary (vet) care in Madison, W
         <td>Polygon</td>
         <td>UTM Zone 16N</td>
         <td>GeoData@Wisconsin</td>
-        <td>Stores urban bounds of city of Madison, WI</td>
+        <td>Stores urban bounds of the city of Madison, WI</td>
     </tr>
      <tr>
         <td>dane_roads</td>
@@ -75,7 +75,7 @@ A database for exploring equitable access to veterinary (vet) care in Madison, W
 
 <h3>Attribute information of datasets:</h3>
 
-<code>madison_demographics</code> stores socio-demographic indicators which are retrieved from American Community Survey (ACS) 2016-20 describe economic conditions with better dimensions like Gini Index of income inequality, median income and help analyze veternary deserts situation in Madison, WI. The data is sourced from <a href = "https://foodsecurity.wisc.edu/downloaddata">Applied Population Laboratory (APL)</a>
+<code>madison_demographics</code> stores socio-demographic indicators which are retrieved from the American Community Survey (ACS) 2016-20, describe economic conditions with better dimensions like the Gini Index of income inequality, median income and help analyze veterinary deserts situation in Madison, WI. The data is sourced from <a href = "https://foodsecurity.wisc.edu/downloaddata">Applied Population Laboratory (APL)</a>
 
 <ul>
     <li><code>noveh1620_est</code>: Households without vehicle, % (2016-20)</li>
@@ -92,16 +92,16 @@ A database for exploring equitable access to veterinary (vet) care in Madison, W
     <li><code>racewhite1620_est</code>: White, % (2016-20)</li>
 </ul>
 
-<code>madison_metro</code> stores information of metro transit stop names and routes connected from a bus stop. The information is sourced from <a href = "https://data-cityofmadison.opendata.arcgis.com/datasets/cityofmadison::metro-transit-bus-stops/explore"> City of Madison</a>. The dataset helps in understanding public transit availability in a census tracts to assess vet care accessibility.
+<code>madison_metro</code> stores information on metro transit stop names and routes connected from a bus stop. The information is sourced from <a href = "https://data-cityofmadison.opendata.arcgis.com/datasets/cityofmadison::metro-transit-bus-stops/explore"> City of Madison</a>. The dataset helps understand public transit availability in census tracts to assess vet care accessibility.
 <ul>
-    <li><code>stop_code</code>: Bus stop code for each stop provided by Madison metro bus service.<li>
-    <li><code>stop_name</code>: Name of the bus stop<li>
-    <li><code>primary_st</code>: Primary street where the bus stop is located<li>
-    <li><code>Route</code>: Other connected route codes from a bus stop<li>
-    <li><code>geometry</code>: Point geometry of bus stop<li>
+    <li><code>stop_code</code>: Bus stop code for each stop provided by Madison metro bus service.</li>
+    <li><code>stop_name</code>: Name of the bus stop</li>
+    <li><code>primary_st</code>: Primary street where the bus stop is located</li>
+    <li><code>Route</code>: Other connected route codes from a bus stop</li>
+    <li><code>geometry</code>: Point geometry of bus stop</li>
 </ul>
 
-<code>madison_census_tracts</code> is useful in appending with madison_demographics to gain insights for spatial queries in understanding vet clinics availability, number of bus stops.
+<code>madison_census_tracts</code> is useful in appending with madison_demographics to gain insights for spatial queries in understanding vet clinics' availability and the number of bus stops.
 <ul>
     <li><code>tractce</code>: Census tract code</li>
     <li><code>geoid</code>: Census tract identifier which is combination of state(55), county(025) and tractce values</li>
@@ -111,7 +111,7 @@ A database for exploring equitable access to veterinary (vet) care in Madison, W
     <li><code>geometry</code>: Polygon geometry of each census tract</li>
 </ul>
 
-<code>madison_vet</code> provides information on veterinary clinic addresses with range of service availability (weekends/weekdays) for various species of pet animals. Additional information on payment plans, full services are also added to complement the veterinary clinics data. The data is compiled by Kaitlyn Breaux.
+<code>madison_vet</code> provides information on veterinary clinic addresses with a range of service availability (weekends/weekdays) for various species of pet animals. Additional information on payment plans and full services are also added to complement the veterinary clinics' data. The data is compiled by Kaitlyn Breaux.
 
 <ul>
     <li><code>name</code>: Name of veterinary clinic/hospital</li>
@@ -136,7 +136,7 @@ A database for exploring equitable access to veterinary (vet) care in Madison, W
     <li><code>geometry</code>: Polygon geometry of Madison, WI urban bounds</li>
 </ul>
 
-<code>vet_walk_polygons</code> provides walk polygons of 0.5, 1 mile from veterinary clinics (using madison_vet datasest) and dane_roads shapefile which describes Dane county road network sourced from GeoData@Wisconsin website (2022). The dataset is computed by Chinna Subbaraya Siddharth (Sid) Ramavajjala by performing network analysis using ArcGIS Pro. The dataset helps in understanding of vet deserts in Madison, WI.
+<code>vet_walk_polygons</code> provides walk polygons of 0.5, 1 mile from veterinary clinics (using madison_vet datasest) and dane_roads shapefile which describes Dane county road network sourced from GeoData@Wisconsin website (2022). The dataset is computed by Chinna Subbaraya Siddharth (Sid) Ramavajjala by performing network analysis using ArcGIS Pro. The dataset helps in the understanding of vet deserts in Madison, WI.
 <ul>
     <li><code>name</code>: Veterinary clinic from which walk polygons are computed</li>
     <li><code>org_mile</code>: Origin mile value of the walk polygon</li>
